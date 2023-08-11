@@ -1,0 +1,20 @@
+##example
+playbook/switch_backup.yml
+
+---
+- name: Backup Switch
+  hosts: "{{ ansible_eda.event.switch_devices }}"
+  gather_facts: false
+  connection: httpapi
+  vars:
+   ansible_httpapi_port: 443
+   ansible_httpapi_use_ssl: true
+   ansible_httpapi_validate_certs: false
+
+  tasks:
+
+    - name: configurable backup path
+      arista.eos.eos_config:
+       backup: yes
+       backup_options:
+       filename: "{{ ansible_eda.event.switch_devices }}.cfg"
