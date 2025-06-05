@@ -6,20 +6,20 @@
   
   tasks:
   
- - name: Send notification message via Mattermost
-      community.general.mattermost:
-       url: http://localhost:8065/hooks/
-       api_key: eqgboi4rwfd75c97w8wa93u7dy
-       attachments:
-         - text: "!!!!!! ALERT !!!!!!"
-           color: '#ff00dd'
-           title: BGP ERROR
-           fields:
-            - title: Issue
-              value: "ENHORABUENA"
-              short: true
-            - title: Details
-              value: "Neighbor Address"
-              short: true
+  - name: Send notification message via Mattermost
+    community.general.mattermost:
+      url: http://localhost:8065/hooks/
+      api_key: eqgboi4rwfd75c97w8wa93u7dy
+      attachments:
+        - text: "!!!!!! ALERT !!!!!!"
+          color: '#ff00dd'
+          title: BGP ERROR
+          fields:
+           - title: Issue
+             value: "ENHORABUENA"
+             short: true
+           - title: Details
+             value: "Neighbor Address"
+             short: true
       delegate_to: localhost
 
