@@ -11,5 +11,5 @@
       condition: event.payload.text is match("!netops setup vlan")
       action:
         run_job_template:
-          name: cenco_filter_regex.yml
+          name: cenco_filter_regex
           organization: Default
