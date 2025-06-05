@@ -14,7 +14,7 @@
               value: "ENHORABUENA"
               short: true
             - title: Details
-              value: "Neighbor Address: {{ ansible_eda.event.name }}"
+              value: "Neighbor Address"
               short: true
       delegate_to: localhost
 
