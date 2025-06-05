@@ -25,9 +25,9 @@
 
   #tasks:
 
-    - name: Extract switch name from text
-      set_fact:
-        cacheable: yes
+    #- name: Extract switch name from text
+    #  set_fact:
+    #    cacheable: yes
        
     - name: eda_input
       debug: 
