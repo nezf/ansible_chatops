@@ -21,12 +21,11 @@
         msg: "Thank you i am say-waht 2"
 
     - debug:
-        msg: "Thank you i am say-waht 2: "{{ switch_devices }}        
+        msg: "Thank you i am say-waht 2: {{ switch_devices }}"
 
     - debug:
         msg: MSG 3 {{ regex_pattern }}
 
 
     - debug:
-        msg: MSG 3 {{ eda_input }}        
-        
+        msg: MSG 3 {{ eda_input }}
