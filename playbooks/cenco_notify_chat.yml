@@ -3,18 +3,18 @@
 ---
  - name: Send notification message via Mattermost
       community.general.mattermost:
-       url: ## Add URL
-       api_key: ## Add Token
+       url: http://localhost:8065/hooks/
+       api_key: eqgboi4rwfd75c97w8wa93u7dy
        attachments:
          - text: "!!!!!! ALERT !!!!!!"
            color: '#ff00dd'
            title: BGP ERROR
            fields:
             - title: Issue
-              value: "BGP {{ ansible_eda.event.fields.session_state }} Error!"
+              value: "ENHORABUENA"
               short: true
             - title: Details
-              value: "Neighbor Address: {{ ansible_eda.event.tags.neighbor_address }} from switch {{ ansible_eda.event.name }}"
+              value: "Neighbor Address: {{ ansible_eda.event.name }}"
               short: true
       delegate_to: localhost
 
