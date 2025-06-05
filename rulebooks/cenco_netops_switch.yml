@@ -14,8 +14,8 @@
          name: cenco_filter_regex.yml
          post_events: true
 
-    - name: Backup specified switch
-      condition: event.switch_devices is defined 
-      action:  
-        run_playbook:
-        name: cenco_check_switch.yml
+    #- name: Backup specified switch
+    #  condition: event.switch_devices is defined 
+    #  action:  
+    #    run_playbook:
+    #    name: cenco_check_switch.yml
