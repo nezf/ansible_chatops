@@ -1,6 +1,11 @@
-## example
-
 ---
+- name: Notifier
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+  
  - name: Send notification message via Mattermost
       community.general.mattermost:
        url: http://localhost:8065/hooks/
