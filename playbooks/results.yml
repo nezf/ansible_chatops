@@ -1,0 +1,16 @@
+    - name: Send notification message via Mattermost
+      community.general.mattermost:
+        url: ## Add URL
+        api_key: ## Add Token
+        attachments:
+          - text: "Estado del dispositivo {{ ansible_eda.event.switch_devices }}"
+            color: '#ff00dd'
+            title: Device Check
+            fields:
+             - title: Inventario
+               value: "Switch identificado en la CMDB"
+               short: true
+             - title: Conectividad
+               value: "{{ pingstatus }}"
+               short: true
+        delegate_to: localhost 
