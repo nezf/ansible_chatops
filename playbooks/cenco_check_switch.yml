@@ -6,7 +6,7 @@
   vars:
     eda_input: "{{ ansible_eda.event.payload.text }}" 
     newprompt: "{{ prompt }}"
-    newtargetdevice: "{{ switch_devices }}"
+    #newtargetdevice: "{{ switch_devices }}"
    #ansible_become: yes
    #ansible_become_method: enable
    #ansible_network_os: cisco.ios.ios
@@ -30,9 +30,9 @@
         switch_devices: "{{ newtargetdevice  }}"
         cacheable: yes
        
-    - name: newtargetdevice
+    - name: eda_input
       debug: 
-        msg: "{{ newtargetdevice }}"
+        msg: "{{ eda_input }}"
 
     - name: newprompt
       debug: 
