@@ -10,12 +10,8 @@
     - name: Filter payload for hostnames
       condition: event.payload.text is match("!netops setup vlan")
       action:
-        debug:
-        var: event.payload.text
-        verbosity: 4
-      #  run_job_template:
-      #   name: cenco_filter_regex.yml
-      #    post_events: true
+        run_job_template:
+         name: cenco_filter_regex.yml
 
     #- name: Backup specified switch
     #  condition: event.switch_devices is defined 
