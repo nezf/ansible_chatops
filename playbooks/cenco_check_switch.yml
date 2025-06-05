@@ -27,7 +27,6 @@
 
     - name: Extract switch name from text
       set_fact:
-        switch_devices: "{{ newtargetdevice  }}"
         cacheable: yes
        
     - name: eda_input
