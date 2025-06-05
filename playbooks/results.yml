@@ -12,6 +12,6 @@
             value: "Switch identificado en la CMDB"
             short: true
           - title: Conectividad
-            value: "{{ eda_ }}"
+            value: "{{ eda_input }}"
             short: true
     delegate_to: localhost 
