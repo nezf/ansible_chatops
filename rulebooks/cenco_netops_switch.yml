@@ -10,6 +10,8 @@
     - name: NetOps Data Captured: setup vlan
       condition: event.payload.text is match("!netops setup vlan")
       action:
-        run_job_template:
-          name: vlan_assignment
-          organization: Default
+      debug:
+        msg: "testing"
+#        run_job_template:
+#          name: vlan_assignment
+#          organization: Default
