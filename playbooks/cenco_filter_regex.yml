@@ -4,13 +4,16 @@
   connection: local
   gather_facts: false
   vars:
-    eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
     regex_pattern: '\b(\w+\.cenco\.corp)\b'          # can supply via vars.yml
+    #eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
 
   tasks:
-
-    - name: Extract switch name from text
-      set_fact:
-       cacheable: yes
-       switch_devices: "{{ eda_input | regex_findall(regex_pattern) }}"
-       regex_proc: done
+    - name: dump all
+      ansible.builtin.debug:
+        var: ansible_eda.event.payload.text
+        verbosity: 4
+    #- name: Extract switch name from text
+    #  set_fact:
+    #   cacheable: yes
+    #   switch_devices: "{{ eda_input | regex_findall(regex_pattern) }}"
+    #   regex_proc: done
