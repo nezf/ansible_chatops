@@ -14,3 +14,9 @@
       run_playbook:
        name: check_switch.yml
        post_events: true
+
+   - name: Backup specified switch
+      condition: event.switch_devices is defined 
+      action:  
+      run_playbook:
+       Name: check_switch.yml
