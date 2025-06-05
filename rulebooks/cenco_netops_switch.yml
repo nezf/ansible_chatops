@@ -9,7 +9,7 @@
   rules:
 
    - name: Filter payload for hostnames
-      condition: event.payload.text is match("switch")
+      condition: event.payload.text is match("!netops setup vlan")
       action:
       run_playbook:
        name: check_switch.yml
