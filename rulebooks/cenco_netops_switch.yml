@@ -12,3 +12,4 @@
       action:
         run_workflow_template:
          name: vlan_assignment
+         organization: Default
