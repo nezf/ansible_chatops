@@ -19,4 +19,4 @@
       condition: event.switch_devices is defined 
       action:  
       run_playbook:
-       Name: check_switch.yml
+       Name: cenco_check_switch.yml
