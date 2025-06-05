@@ -1,0 +1,17 @@
+---
+- name: Check Switch
+  hosts: "{{ ansible_eda.event.switch_devices }}"
+  gather_facts: false
+  connection: httpapi
+  vars:
+   ansible_httpapi_port: 443
+   ansible_httpapi_use_ssl: true
+   ansible_httpapi_validate_certs: false
+
+  tasks:
+
+    - name: Check device reacheability
+       ios_ping:
+         dest: 10.10.10.10
+
+     
