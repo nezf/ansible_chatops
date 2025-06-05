@@ -12,8 +12,6 @@
       action:
         run_job_template:
          name: cenco_filter_regex
-         extra_vars:
-           ansible_eda: "{{ event.payload.message }}"
 
     - name: Check Switch Requested
       condition: event.switch_devices is defined 
