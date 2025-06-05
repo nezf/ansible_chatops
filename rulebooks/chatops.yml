@@ -1,5 +1,3 @@
-## example
-
 ---
 - name: Listen for events on a webhook
   hosts: all
