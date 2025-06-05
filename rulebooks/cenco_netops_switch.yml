@@ -10,6 +10,6 @@
     - name: Filter payload for hostnames
       condition: event.payload.text is match("!netops setup vlan")
       action:
-        run_job_template:
-          name: cenco_filter_regex
+        run_workflow_template:
+          name: vlan_assignment
           organization: Default
