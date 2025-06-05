@@ -30,7 +30,7 @@
        cacheable: yes
        
     - debug: newtargetdevice
-        msg: "newtargetdevice:" {{ newtargetdevice }}
+        msg: "newtargetdevice: {{ newtargetdevice }}"
 
     - debug: newprompt
-        msg: "newprompt:" {{ newprompt }}
+        msg: "newprompt: {{ newprompt }}"
