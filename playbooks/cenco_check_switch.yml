@@ -30,8 +30,10 @@
         switch_devices: "{{ newtargetdevice  }}"
         cacheable: yes
        
-    - debug: 
-      msg: "{{ newtargetdevice }}"
+    - name: newtargetdevice
+      debug: 
+        msg: "{{ newtargetdevice }}"
 
-    - debug: 
-      msg: "newprompt: {{ newprompt }}"
+    - name: newprompt
+      debug: 
+        msg: "newprompt: {{ newprompt }}"
