@@ -7,16 +7,15 @@
         port: 5000
 
   rules:
-
-   - name: Filter payload for hostnames
+    - name: Filter payload for hostnames
       condition: event.payload.text is match("!netops setup vlan")
       action:
-      run_playbook:
-       name: cenco_filter_regex.yml
-       post_events: true
+        run_playbook:
+         name: cenco_filter_regex.yml
+         post_events: true
 
-   - name: Backup specified switch
+    - name: Backup specified switch
       condition: event.switch_devices is defined 
       action:  
-      run_playbook:
-       Name: cenco_check_switch.yml
+        run_playbook:
+        name: cenco_check_switch.yml
