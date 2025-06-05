@@ -11,7 +11,7 @@
       url: http://192.168.100.26:8065
       api_key: eqgboi4rwfd75c97w8wa93u7dy
       attachments:
-        - text: "!!!!!! ALERT !!!!!!"
+        - text: "Resultados"
           color: '#ff00dd'
           title: Resultados de la Operacion
           fields:
