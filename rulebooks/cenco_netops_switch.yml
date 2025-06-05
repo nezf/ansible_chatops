@@ -11,7 +11,7 @@
       condition: event.payload.text is match("!netops setup vlan")
       action:
         debug:
-        var: ansible_eda.event.payload.text
+        var: event.payload.text
         verbosity: 4
       #  run_job_template:
       #   name: cenco_filter_regex.yml
