@@ -4,9 +4,7 @@
   gather_facts: false
   connection: ansible.netcommon.network_cli
   vars:
-    eda_input: "{{ ansible_eda.event.payload.text }}" 
-    newprompt: "{{ prompt }}"
-    #newtargetdevice: "{{ switch_devices }}"
+   eda_input: "{{ ansible_eda.event.payload.text }}"
    #ansible_become: yes
    #ansible_become_method: enable
    #ansible_network_os: cisco.ios.ios
@@ -19,20 +17,8 @@
    #   cisco.ios.ios_ping:
    #     dest: "{{ ansible_eda.event.switch_devices }}"
    #     register: pingstatus
-  #vars:
-   # eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
-    #regex_pattern: '\b(\w+\.mydomain\.com)\b'          # can supply via vars.yml
-
-  #tasks:
-
-    #- name: Extract switch name from text
-    #  set_fact:
-    #    cacheable: yes
        
     - name: eda_input
       debug: 
         msg: "{{ eda_input }}"
 
-    - name: newprompt
-      debug: 
-        msg: "newprompt: {{ newprompt }}"
