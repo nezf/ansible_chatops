@@ -3,9 +3,9 @@
   hosts: all
   #connection: local
   gather_facts: false
-  #vars:
-  #  regex_pattern: '\b(\w+\.cenco\.corp)\b'          # can supply via vars.yml
-  #  eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
+  vars:
+    eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
+  #  regex_pattern: '\b(\w+\.cenco\.corp)\b'          # can supply via vars.ym
 
   tasks:
     - debug:
