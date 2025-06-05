@@ -8,24 +8,10 @@
   #  regex_pattern: '\b(\w+\.cenco\.corp)\b'          # can supply via vars.ym
 
   tasks:
-    - debug:
-        msg: "Thank you i am say-waht 1"
-        
     - name: Extract switch name from text
       set_fact:
         cacheable: yes
         switch_devices: "{{ eda_input | regex_findall(regex_pattern) }}"
         regex_proc: done
-
-    - debug:
-        msg: "Thank you i am say-waht 2"
-
-    - debug:
-        msg: "Thank you i am say-waht 2: {{ switch_devices }}"
-
-    - debug:
-        msg: MSG 3 {{ regex_pattern }}
-
-
-    - debug:
-        msg: MSG 3 {{ eda_input }}
+        prompt: "{{ eda_input }}"
+        targetdevice: "{{ switch_devices }}"
