@@ -13,7 +13,7 @@
       attachments:
         - text: "!!!!!! ALERT !!!!!!"
           color: '#ff00dd'
-          title: BGP ERROR
+          title: Resultados de la Operacion
           fields:
            - title: Issue
              value: "ENHORABUENA"
@@ -21,5 +21,3 @@
            - title: Details
              value: "Neighbor Address"
              short: true
-      delegate_to: localhost
-
