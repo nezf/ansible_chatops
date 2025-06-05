@@ -1,0 +1,16 @@
+---
+- name: Regex Processing for hostnames
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    eda_input: "{{ ansible_eda.event.payload.text }}"  # access event payload
+    regex_pattern: '\b(\w+\.cenco\.corp)\b'          # can supply via vars.yml
+
+  tasks:
+
+    - name: Extract switch name from text
+      set_fact:
+       cacheable: yes
+       switch_devices: "{{ eda_input | regex_findall(regex_pattern) }}"
+       regex_proc: done
