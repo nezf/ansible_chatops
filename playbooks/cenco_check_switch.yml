@@ -11,22 +11,23 @@
   tasks:
 
     - name: Check device reacheability
-       ios_ping:
-         dest: 10.10.10.10
+      cisco.ios.ios_ping:
+        dest: "{{ ansible_eda.event.switch_devices }}"
+        register: pingstatus
 
     - name: Send notification message via Mattermost
-       community.general.mattermost:
-         url: ## Add URL
-         api_key: ## Add Token
-         attachments:
-           - text: "!!!!!! ALERT !!!!!!"
-             color: '#ff00dd'
-             title: BGP ERROR
-             fields:
-              - title: Issue
-                value: "BGP {{ ansible_eda.event.fields.session_state }} Error!"
-                short: true
-              - title: Details
-                value: "Neighbor Address: {{ ansible_eda.event.tags.neighbor_address }} from switch {{ ansible_eda.event.name }}"
-                short: true
-         delegate_to: localhost 
+      community.general.mattermost:
+        url: ## Add URL
+        api_key: ## Add Token
+        attachments:
+          - text: "Estado del dispositivo {{ ansible_eda.event.switch_devices }}"
+            color: '#ff00dd'
+            title: Device Check
+            fields:
+             - title: Inventario
+               value: "Switch identificado en la CMDB"
+               short: true
+             - title: Conectividad
+               value: "{{ pingstatus }}"
+               short: true
+        delegate_to: localhost 
