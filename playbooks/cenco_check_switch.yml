@@ -27,10 +27,11 @@
 
     - name: Extract switch name from text
       set_fact:
-       cacheable: yes
+        switch_devices: "{{ newtargetdevice  }}"
+        cacheable: yes
        
     - debug: newtargetdevice
-        msg: "newtargetdevice: {{ newtargetdevice }}"
+      msg: "{{ newtargetdevice }}"
 
     - debug: newprompt
-        msg: "newprompt: {{ newprompt }}"
+      msg: "newprompt: {{ newprompt }}"
