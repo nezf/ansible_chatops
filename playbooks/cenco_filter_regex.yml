@@ -13,5 +13,4 @@
         cacheable: yes
         switch_devices: "{{ eda_input | regex_findall(regex_pattern) }}"
         regex_proc: done
-        prompt: {{ eda_input }}
-        targetdevice: {{ switch_devices }}
+        prompt: "{{ eda_input }}"
