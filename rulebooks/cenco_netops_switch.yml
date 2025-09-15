@@ -7,7 +7,7 @@
         port: 5000
         
   rules:
-    - name: Filter payload for hostnames
+    - name: ChatOps Conversation
       condition: event.payload.message is search("Ansible", ignorecase=false)
       action:
         run_workflow_template:
