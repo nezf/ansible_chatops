@@ -8,7 +8,7 @@
         
   rules:
     - name: Filter payload for hostnames
-      condition: event.payload.message contains "Ansible"
+      condition: event.payload.message is search("Ansible", ignorecase=false)
       action:
         run_workflow_template:
           name: "Asignación de VLAN"
