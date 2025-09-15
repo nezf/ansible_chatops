@@ -1,0 +1,23 @@
+---
+- name: Notifier
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+  
+  - name: Send notification message via Mattermost
+    community.general.mattermost:
+      url: http://192.168.124.100:8065
+      api_key: bs4y4ozizprbtya1eba8piaibw
+      attachments:
+        - text: "Resumen"
+          color: '#ff00dd'
+          title: Resultados de la Operacion
+          fields:
+           - title: Configuración VLAN
+             value: "ID 15"
+             short: true
+           - title: Detalles
+             value: "Interfaz 0/2/2 Configurada con VLAN ID 15"
+             short: true
