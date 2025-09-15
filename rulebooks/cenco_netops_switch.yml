@@ -8,7 +8,7 @@
         
   rules:
     - name: ChatOps Conversation
-      condition: event.payload.message is search("Ansible", ignorecase=false)
+      condition: event.payload.message is search("!netops setup vlan", ignorecase=false) or event.payload.text is search("!netops setup vlan", ignorecase=false)
       action:
         run_workflow_template:
           name: "Asignación de VLAN"
