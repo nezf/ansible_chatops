@@ -11,5 +11,5 @@
       condition: event.payload.text is match("!netops setup vlan")
       action:
         run_workflow_template:
-          name: vlan_assignment
+          name: "Asignación de VLAN"
           organization: Default
