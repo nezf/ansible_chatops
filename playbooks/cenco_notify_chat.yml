@@ -8,8 +8,8 @@
   
   - name: Send notification message via Mattermost
     community.general.mattermost:
-      url: http://192.168.100.26:8065
-      api_key: eqgboi4rwfd75c97w8wa93u7dy
+      url: http://192.168.124.100:8065/hooks
+      api_key: bs4y4ozizprbtya1eba8piaibw
       attachments:
         - text: "Resultados"
           color: '#ff00dd'
